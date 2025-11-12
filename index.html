@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhakti Kawade • Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#fde1ff; /* pastel pink */
+      --bg2:#e6f2ff; /* pastel blue */
+      --ink:#1b1b1f;
+      --muted:#5b5b67;
+      --card: rgba(255,255,255,0.75);
+      --border: rgba(0,0,0,0.08);
+      --shadow: 0 10px 30px rgba(31,38,135,0.15);
+      --accent:#8b5cf6; /* soft purple */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 10% 0%, rgba(139,92,246,0.12), transparent 60%),
+                  radial-gradient(1200px 800px at 100% 100%, rgba(16,185,129,0.12), transparent 60%),
+                  linear-gradient(120deg, var(--bg1), var(--bg2));
+      background-attachment: fixed;
+    }
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header.nav{
+      position:sticky;top:0;backdrop-filter:saturate(1.2) blur(8px);
+      background:linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.5));
+      border-bottom:1px solid var(--border);
+      z-index:10;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .brand span{color:#6b7280;font-weight:600}
+    .nav a{color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:999px}
+    .nav a:hover{background:rgba(0,0,0,0.06)}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:36px 0}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);padding:20px}
+    .hero h1{font-size:42px;line-height:1.1;margin:0}
+    .tagline{color:var(--muted);margin:12px 0 0;font-size:18px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .btn{border:none;border-radius:16px;padding:12px 18px;font-weight:600;cursor:pointer;transition:transform .05s ease, box-shadow .2s ease}
+    .btn-primary{background:var(--ink);color:#fff;box-shadow:0 6px 14px rgba(0,0,0,0.18)}
+    .btn-ghost{background:#fff;border:1px solid var(--border)}
+    .btn:active{transform:scale(0.98)}
+
+    section{scroll-margin-top:90px;margin-top:52px}
+    section h2{display:flex;align-items:center;gap:10px;font-size:22px;margin:0 0 12px}
+    .emoji{font-size:22px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;font-size:14px}
+
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .timeline{position:relative;border-left:1px solid var(--border);padding-left:18px}
+    .timeline li{margin:0 0 18px 0}
+    .dot{position:absolute;left:-6px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--ink);border:2px solid #fff}
+
+    footer{color:#6b7280;text-align:center;padding:40px 0}
+
+    /* subtle float animation */
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* sparkle */
+    .sparkles{position:relative}
+    .sparkles::after{content:"✨";position:absolute;right:12px;top:-8px;opacity:0.9}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand">Bhakti<span>is-a.dev</span></div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <!-- <a href="#goals">Goals</a> -->
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="sparkles">Hi, I'm Bhakti Kawade</h1>
+        <p class="tagline">12th‑grade student • Curious about technology & creative editing • Dreaming big, starting simple</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#interests">See what I like →</a>
+          <a class="btn btn-ghost" href="#contact">Say hi ✉️</a>
+        </div>
+      </div>
+      <div class="card float" aria-hidden="true">
+        <div style="aspect-ratio:4/3;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,#fff,rgba(255,255,255,0.6));border:1px dashed var(--border)">
+          <div style="text-align:center;padding:18px">
+            <div style="font-size:40px">🌷</div>
+            <p style="color:var(--muted);margin:8px 0 0">Add a favorite photo here later</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2><span class="emoji">💖</span> About</h2>
+      <div class="card">
+        <p style="margin:0">I haven’t started coding yet — and that’s okay. I’m exploring, collecting ideas, and building confidence. I love neat aesthetics, calm music while studying, and the feeling of finishing small steps every day.</p>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section id="interests">
+      <h2><span class="emoji">🌸</span> Interests</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3 style="margin:0 0 6px">Tech Curiosity</h3>
+          <p class="muted">I like exploring how apps and AI work behind the scenes. Slow and simple — no rush.</p>
+          <div class="chips" aria-label="keywords">
+            <span class="chip">Web basics</span>
+            <span class="chip">AIML (future)</span>
+            <span class="chip">Cool UI</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Editing & Aesthetics</h3>
+          <p class="muted">Transitions, color vibes, reels — I enjoy telling tiny stories visually.</p>
+          <div class="chips">
+            <span class="chip">CapCut</span>
+            <span class="chip">Canva</span>
+            <span class="chip">Mood boards</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px">Creative Life</h3>
+          <p class="muted">Reading quotes, journaling, and learning in public keeps me inspired.</p>
+          <div class="chips">
+            <span class="chip">Minimalism</span>
+            <span class="chip">Study playlists</span>
+            <span class="chip">Photography</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS / ROADMAP -->
+    <!-- <section id="goals">
+      <h2><span class="emoji">🗺️</span> Goals</h2>
+      <div class="card">
+        <ul class="timeline" style="list-style:none;padding-left:18px;position:relative">
+          <li><span class="dot" aria-hidden="true"></span><strong>Now:</strong> Pick one beginner web course and finish the first module.</li>
+          <li><span class="dot" aria-hidden="true"></span><strong>Next 2 months:</strong> Make a simple personal page and one fun mini‑project.</li>
+          <li><span class="dot" aria-hidden="true"></span><strong>Later:</strong> Try a tiny AI/ML notebook with a toy dataset.</li>
+        </ul>
+      </div>
+    </section> -->
+
+    <!-- GALLERY / EDITS PLACEHOLDER -->
+    <section id="gallery">
+      <h2><span class="emoji">📷</span> Gallery</h2>
+      <div class="grid grid-3">
+        <div class="card" style="aspect-ratio:4/5;display:grid;place-items:center">Add edit #1 later</div>
+        <div class="card" style="aspect-ratio:4/5;display:grid;place-items:center">Add edit #2 later</div>
+        <div class="card" style="aspect-ratio:4/5;display:grid;place-items:center">Add edit #3 later</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2><span class="emoji">📮</span> Contact</h2>
+      <div class="card" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <p style="margin:0;color:var(--muted)">Want to say hi or share ideas?</p>
+        <div style="display:flex;gap:10px">
+          <a class="btn btn-primary" href="mailto:bhakti.kawade@example.com">Email</a>
+          <!-- <a class="btn btn-ghost" href="#" title="Instagram">Instagram</a> -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="yr"></span> Bhakti Kawade • Built with kindness
+    </footer>
+  </main>
+
+  <script>
+    // year autofill
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // smooth scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}})
+    })
+  </script>
+</body>
+</html>
